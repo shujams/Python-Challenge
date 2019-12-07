@@ -18,6 +18,7 @@ postData = os.path.join('.', 'Resources', 'budget_analysis.txt')
 total_months = 0
 month_of_change = []
 net_change_list = []
+first_row
 greatest_increase = ["", 0]
 greatest_decrease = ["", 999999999999999999999]
 total_net = 0
@@ -35,7 +36,7 @@ with open(bankData) as financial_data:
     # Extract the first row to avoid appending to net_change_list
     total_months = total_months + 1
 
-    
+    first_row = next(csvreader)
     total_net = total_net + int(first_row[1])
     prev_net = int(first_row[1])
 
